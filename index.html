@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display-container">
+            <input type="text" id="display" disabled>
+        </div>
+        <div id="buttons">
+            <div class="row">
+                <button onclick="clearDisplay()" class="operation">C</button>
+                <button onclick="deleteLast()" class="operation">Del</button>
+                <button onclick="addToExpression('%')" class="operation">%</button>
+                <button onclick="addToExpression('/')" class="operation">/</button>
+            </div>
+            <div class="row">
+                <button onclick="addToExpression('7')">7</button>
+                <button onclick="addToExpression('8')">8</button>
+                <button onclick="addToExpression('9')">9</button>
+                <button onclick="addToExpression('*')" class="operation">*</button>
+            </div>
+            <div class="row">
+                <button onclick="addToExpression('4')">4</button>
+                <button onclick="addToExpression('5')">5</button>
+                <button onclick="addToExpression('6')">6</button>
+                <button onclick="addToExpression('-')" class="operation">-</button>
+            </div>
+            <div class="row">
+                <button onclick="addToExpression('1')">1</button>
+                <button onclick="addToExpression('2')">2</button>
+                <button onclick="addToExpression('3')">3</button>
+                <button onclick="addToExpression('+')" class="operation">+</button>
+            </div>
+            <div class="row">
+                <button onclick="addToExpression('0')" class="zero">0</button>
+                <button onclick="addToExpression('.')">.</button>
+                <button onclick="calculateResult()" class="operation">=</button>
+            </div>
+        </div>
+        <button onclick="toggleScientific()" class="toggle-sci">Sci</button>
+        <div id="scientific-buttons" class="hidden">
+            <div class="row">
+                <button onclick="wrapWithFunction('Math.sin')">sin</button>
+                <button onclick="wrapWithFunction('Math.cos')">cos</button>
+                <button onclick="wrapWithFunction('Math.tan')">tan</button>
+                <button onclick="wrapWithFunction('Math.log')">log</button>
+            </div>
+            <div class="row">
+                <button onclick="wrapWithFunction('Math.sqrt')">√</button>
+                <button onclick="wrapWithFunction('Math.pow', ',')">^</button>
+                <button onclick="wrapWithFunction('Math.exp')">exp</button>
+                <button onclick="addToExpression('Math.PI')">π</button>
+            </div>
+        </div>
+        <div id="history">
+            <h4>Last 5 Calculations:</h4>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
